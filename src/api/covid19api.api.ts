@@ -4,10 +4,12 @@ type SummaryDataResponse = {
   data: SummaryData
 }
 
-type SummaryData = {
+export type SummaryData = {
   Global: object,
   Countries: object[],
-  Date: string
+  Date: string,
+  ID: string,
+  Message: string,
 }
 
 const getSummary = async ():Promise<SummaryData> => {
