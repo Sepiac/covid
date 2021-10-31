@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import getSummary, { SummaryData } from '../api/covid19api.api'
+import { getSummary, SummaryData } from '../api'
 
 const useCovid19Api = () => {
   return useQuery<SummaryData, Error>('summary', getSummary,
