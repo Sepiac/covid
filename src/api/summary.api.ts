@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-type SummaryDataResponse = {
-  data: SummaryData
+interface SummaryDataResponse {
+  data: SummaryData,
 }
 
-export type SummaryData = {
+export interface SummaryData {
   Global: object,
   Countries: object[],
   Date: string,
