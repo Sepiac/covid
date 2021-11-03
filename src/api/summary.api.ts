@@ -1,14 +1,41 @@
-import axios from 'axios';
 import getResponse from './covid19.api';
 
-// TODO(drussell): run this through a type generator
 export interface SummaryData {
-  Global: object,
-  Countries: object[],
-  Date: string,
-  ID: string,
-  Message: string,
+  ID: string;
+  Message: string;
+  Global: Global;
+  Countries: Country[];
+  Date: string;
 }
+
+interface Country {
+  ID: string;
+  Country: string;
+  CountryCode: string;
+  Slug: string;
+  NewConfirmed: number;
+  TotalConfirmed: number;
+  NewDeaths: number;
+  TotalDeaths: number;
+  NewRecovered: number;
+  TotalRecovered: number;
+  Date: string;
+  Premium: Premium;
+}
+
+interface Premium {
+}
+
+interface Global {
+  NewConfirmed: number;
+  TotalConfirmed: number;
+  NewDeaths: number;
+  TotalDeaths: number;
+  NewRecovered: number;
+  TotalRecovered: number;
+  Date: string;
+}
+
 
 const getSummary = async ():Promise<SummaryData> => {
   const response = await getResponse<SummaryData>('/summary')
