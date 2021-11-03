@@ -1,10 +1,13 @@
 import React from 'react'
-import { useDefaultApi } from '../hooks'
+import { Summary } from '.'
+import { useSummaryApi } from '../hooks'
 
-export const ApiTest = (): JSX.Element => {
-  const { error, isLoading, data } = useDefaultApi()
+const ApiTest = (): JSX.Element => {
+  const { error, isLoading, data } = useSummaryApi()
 
   return (
-   !isLoading ? <h1>{data?.countriesRoute.Path}</h1> : <p>Loading ...</p>
+   !isLoading ? <Summary summary={data}/> : <p>Loading ...</p>
   )
 }
+
+export default ApiTest

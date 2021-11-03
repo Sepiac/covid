@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ApiTest } from './components/ApiTest';
+import { ApiTest } from './components';
 
 function App() {
   const queryClient = new QueryClient()
