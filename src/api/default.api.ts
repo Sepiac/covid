@@ -1,30 +1,31 @@
 import getResponse from './covid19.api';
 
 export interface DefaultData {
-  countriesRoute: Route;
-  countryDayOneRoute: Route;
-  countryDayOneTotalRoute: Route;
-  countryRoute: Route;
-  countryRoutePremium: Route;
-  countryRoutePremiumData: Route;
-  countryStatusDayOneLiveRoute: Route;
-  countryStatusDayOneRoute: Route;
-  countryStatusDayOneTotalRoute: Route;
-  countryStatusLiveRoute: Route;
-  countryStatusRoute: Route;
-  countryStatusTotalRoute: Route;
-  countrySummaryRoutePremium: Route;
-  countryTestingPremium: Route;
-  countryTotalRoute: Route;
-  exportRoute: Route;
-  liveCountryRoute: Route;
-  liveCountryStatusAfterDateRoute: Route;
-  liveCountryStatusRoute: Route;
-  summaryRoute: Route;
-  travelAdvicePremium: Route;
-  webhookRoute: Route;
+  countriesRoute: CountriesRoute;
+  countryDayOneRoute: CountriesRoute;
+  countryDayOneTotalRoute: CountriesRoute;
+  countryRoute: CountriesRoute;
+  countryRoutePremium: CountriesRoute;
+  countryRoutePremiumData: CountriesRoute;
+  countryStatusDayOneLiveRoute: CountriesRoute;
+  countryStatusDayOneRoute: CountriesRoute;
+  countryStatusDayOneTotalRoute: CountriesRoute;
+  countryStatusLiveRoute: CountriesRoute;
+  countryStatusRoute: CountriesRoute;
+  countryStatusTotalRoute: CountriesRoute;
+  countrySummaryRoutePremium: CountriesRoute;
+  countryTestingPremium: CountriesRoute;
+  countryTotalRoute: CountriesRoute;
+  exportRoute: CountriesRoute;
+  liveCountryRoute: CountriesRoute;
+  liveCountryStatusAfterDateRoute: CountriesRoute;
+  liveCountryStatusRoute: CountriesRoute;
+  summaryRoute: CountriesRoute;
+  travelAdvicePremium: CountriesRoute;
+  webhookRoute: CountriesRoute;
 }
-export interface Route {
+
+interface CountriesRoute {
   Name: string;
   Description: string;
   Path: string;

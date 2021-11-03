@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSummaryApi } from '../hooks'
+import { useDefaultApi } from '../hooks'
 
 export const ApiTest = (): JSX.Element => {
-  const { error, isLoading, data } = useSummaryApi()
+  const { error, isLoading, data } = useDefaultApi()
 
   return (
-   !isLoading ? <h1>{data?.Global.TotalDeaths}</h1> : <p>Loading ...</p>
+   !isLoading ? <h1>{data?.countriesRoute.Path}</h1> : <p>Loading ...</p>
   )
 }
