@@ -9,6 +9,9 @@ const Summary = (props: Props) => {
 
   return summary ? (
     <div>
+      <header>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f5c425b5c49976ab6a58516/1601168718757-RKML9G8LY9R57FXHWYUD/COVID-19-virus-5538240_1920.png?format=500w" alt="covid 19 logo" />
+      </header>
       <h1>{moment(summary.Global.Date).format('MMMM Do YYYY')}</h1>
       <div>
         <p>New Deaths: {summary.Global.NewDeaths}</p>
