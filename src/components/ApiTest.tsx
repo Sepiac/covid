@@ -6,7 +6,7 @@ const ApiTest = (): JSX.Element => {
   const { error, isLoading, data } = useSummaryApi()
 
   return (
-   !isLoading ? <Summary summary={data}/> : <p>Loading ...</p>
+   !isLoading ? <Summary summary={data} /> : <p>Loading ...</p>
   )
 }
 
