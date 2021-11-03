@@ -9,7 +9,7 @@ const Summary = (props: Props) => {
 
   return summary ? (
     <div>
-      <h1>Global Summary {moment(summary.Global.Date).format('MM/DD/yyyy')}</h1>
+      <h1>{moment(summary.Global.Date).format('MMMM Do YYYY')}</h1>
       <div>
         <p>New Deaths: {summary.Global.NewDeaths}</p>
         <p>Total Deaths: {summary.Global.TotalDeaths}</p>
