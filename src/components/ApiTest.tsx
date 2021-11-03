@@ -1,11 +1,10 @@
 import React from 'react'
-import useCovid19Api from '../hooks/useCovid19Api'
+import { useSummaryApi } from '../hooks'
 
-export const ApiTest = () => {
-  const {error, isLoading, data } = useCovid19Api()
+export const ApiTest = (): JSX.Element => {
+  const { error, isLoading, data } = useSummaryApi()
+
   return (
-    <div>
-      {isLoading && !error ? null : JSON.stringify(data)}
-    </div>
+   !isLoading ? <h1>{data?.Date}</h1> : <p>Loading ...</p>
   )
 }
