@@ -1,11 +1,15 @@
+import { useMemo } from 'react';
 import type { SummaryData } from '../api'
 import moment from 'moment';
 interface Props {
   summary: SummaryData | undefined
+  countryCode?: string | undefined
 }
 
 const Summary = (props: Props) => {
-  const { summary } = props;
+  const { summary, countryCode = 'US' } = props;
+
+  const countryOfInterest = useMemo(() => summary?.Countries.find(country => country.CountryCode === countryCode), [summary, countryCode])
 
   return summary ? (
     <div>
@@ -14,12 +18,10 @@ const Summary = (props: Props) => {
       </header>
       <h1>{moment(summary.Global.Date).format('MMMM Do YYYY')}</h1>
       <div>
-        <p>New Deaths: {summary.Global.NewDeaths}</p>
-        <p>Total Deaths: {summary.Global.TotalDeaths}</p>
-        <p>New Deaths United States: {summary.Countries.find(country => country.CountryCode === 'US')?.NewDeaths}</p>
-        <p>{}</p>
-        <p>{}</p>
-        <p>{}</p>
+        <p>New Deaths: {summary.Global.NewDeaths.toLocaleString()}</p>
+        <p>Total Deaths: {summary.Global.TotalDeaths.toLocaleString()}</p>
+        <p>New Deaths {countryOfInterest?.Country}: {countryOfInterest?.NewDeaths.toLocaleString()}</p>
+        <p>Total Deaths {countryOfInterest?.Country}: {countryOfInterest?.TotalDeaths.toLocaleString()}</p>
       </div>
     </div>
   ) : (
