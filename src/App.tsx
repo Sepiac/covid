@@ -10,8 +10,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="App">
         <header className="App-header">
-         <ApiTest />
         </header>
+        <body className="App-body">
+          <ApiTest />
+        </body>
       </div>
     </QueryClientProvider>
   );
